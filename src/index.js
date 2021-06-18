@@ -33,7 +33,7 @@ export class App extends React.Component {
       referenceContentTypes = []
     }
 
-    const query = referenceContentTypes.length > 0 ? {"sys.contentType.sys.id[in]": referenceContentTypes.join(", ")} : {}
+    const query = referenceContentTypes.length > 0 ? {"sys.contentType.sys.id[in]": referenceContentTypes.join(",")} : {}
     return (await this.props.sdk.space.getEntries(query)).items
   }
 
